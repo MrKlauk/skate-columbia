@@ -1,1 +1,1 @@
-# skate-columbia
+My React App :)
