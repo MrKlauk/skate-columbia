@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/skate-columbia/static/css/main.33aca2f4.css",
+    "main.js": "/skate-columbia/static/js/main.fa6583ea.js",
+    "index.html": "/skate-columbia/index.html",
+    "main.33aca2f4.css.map": "/skate-columbia/static/css/main.33aca2f4.css.map",
+    "main.fa6583ea.js.map": "/skate-columbia/static/js/main.fa6583ea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33aca2f4.css",
+    "static/js/main.fa6583ea.js"
+  ]
+}
