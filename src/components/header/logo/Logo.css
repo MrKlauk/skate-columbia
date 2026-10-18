@@ -1,0 +1,10 @@
+.logo {
+    font-family: var(--heading);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+}
+
+.logo .gold {
+    color: var(--gold);
+}
