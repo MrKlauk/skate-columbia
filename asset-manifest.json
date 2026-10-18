@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/skate-columbia/static/css/main.33aca2f4.css",
-    "main.js": "/skate-columbia/static/js/main.fa6583ea.js",
+    "main.css": "/skate-columbia/static/css/main.e0f7a80a.css",
+    "main.js": "/skate-columbia/static/js/main.45fce085.js",
     "index.html": "/skate-columbia/index.html",
-    "main.33aca2f4.css.map": "/skate-columbia/static/css/main.33aca2f4.css.map",
-    "main.fa6583ea.js.map": "/skate-columbia/static/js/main.fa6583ea.js.map"
+    "main.e0f7a80a.css.map": "/skate-columbia/static/css/main.e0f7a80a.css.map",
+    "main.45fce085.js.map": "/skate-columbia/static/js/main.45fce085.js.map"
   },
   "entrypoints": [
-    "static/css/main.33aca2f4.css",
-    "static/js/main.fa6583ea.js"
+    "static/css/main.e0f7a80a.css",
+    "static/js/main.45fce085.js"
   ]
 }
