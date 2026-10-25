@@ -1,0 +1,70 @@
+.shop {
+    background: var(--card);
+    border: 1px solid var(--card-line);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.shop:hover {
+    border-color: var(--gold);
+}
+
+.shop-img {
+    width: 100%;
+    height: 192px;
+    object-fit: cover;
+}
+
+.shop-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.shop-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.shop-head h3 {
+    font-family: var(--heading);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.shop-desc {
+    color: var(--dim);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.shop-footer {
+    color: var(--muted);
+    font-family: var(--heading);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px 4px 8px;
+    border-radius: 4px;
+    font-family: var(--heading);
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    align-self: flex-start;
+    border: 1px solid rgba(var(--gold-rgb), 0.4);
+    background: rgba(var(--gold-rgb), 0.13);
+    color: var(--gold);
+}

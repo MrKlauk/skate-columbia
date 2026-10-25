@@ -1,0 +1,47 @@
+.hero {
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    width: 100%;
+}
+
+.hero h1 {
+    font-family: var(--heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.hero p {
+    color: var(--dim);
+}
+
+.hero-home {
+    padding: 60px 40px;
+}
+
+.hero-home h1 {
+    font-size: clamp(2.2rem, 6vw, 3.75rem);
+    line-height: 1.15;
+    max-width: 900px;
+    margin: 0 auto;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.hero-page {
+    padding: 60px 24px;
+}
+
+.hero-page h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 12px;
+}
+
+.hero-page p {
+    font-size: 16px;
+}
+
+@media (max-width: 700px) {
+    .hero-home {
+        padding: 40px 20px;
+    }
+}

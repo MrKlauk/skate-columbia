@@ -11,18 +11,21 @@
 }
 
 .nav-item {
-    color: var(--gray);
     font-size: 14px;
     padding-bottom: 2px;
     border-bottom: 1px solid transparent;
 }
 
 .nav-item a {
-    color: inherit;
+    color: var(--gray);
     display: block;
 }
 
-.nav-item.active {
+.nav-item a:hover {
+    color: var(--white);
+}
+
+.nav-item a.active {
     color: var(--gold);
     border-bottom-color: var(--gold);
 }

@@ -4,7 +4,17 @@
     --gold: #f0c040;
     --white: #f5f5f5;
     --gray: #e0e0e0;
+    --dim: #b0b0b0;
+    --muted: #999999;
     --line: #2a2a2a;
+    --card: #242424;
+    --card-line: #333333;
+    --green: #27ae60;
+    --blue: #2980b9;
+    --green-rgb: 39, 174, 96;
+    --blue-rgb: 41, 128, 185;
+    --gold-rgb: 240, 192, 64;
+    --overlay: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.7) 100%);
     --heading: 'Courier Prime', 'Courier New', monospace;
     --body: 'Inter', system-ui, sans-serif;
 }
@@ -32,9 +42,23 @@ a:focus {
     outline: none;
 }
 
-/* generic column stacking for small screens */
+.layout {
+    width: 80%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 700px) {
-    .stack-on-small {
-        flex-direction: column;
+    .layout {
+        width: 100%;
     }
 }
