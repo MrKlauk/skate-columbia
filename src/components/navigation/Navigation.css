@@ -3,6 +3,20 @@
     align-items: center;
 }
 
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 18px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.nav-toggle:hover {
+    color: var(--gold);
+}
+
 .nav-list {
     list-style: none;
     display: flex;
@@ -31,11 +45,20 @@
 }
 
 @media (max-width: 700px) {
+    .nav-toggle {
+        display: block;
+    }
+
     .nav-list {
+        display: none;
         flex-direction: column;
         gap: 0;
         padding: 6px 0;
         width: 100%;
+    }
+
+    .nav-list.open {
+        display: flex;
     }
 
     .nav-item {

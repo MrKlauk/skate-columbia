@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import './index.css';
 import Layout from "./layout";
 import Home from "./pages/home/Home";
@@ -11,6 +12,7 @@ import Tricks from "./pages/tricks/Tricks";
 const App = () => {
   return (
     <HashRouter>
+      <Toaster position="top-right" />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
