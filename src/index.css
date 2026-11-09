@@ -82,3 +82,13 @@ a:focus {
     letter-spacing: 0.06em !important;
     text-transform: uppercase !important;
 }
+
+.loading {
+    color: var(--dim);
+    text-align: center;
+    padding: 40px;
+    font-family: var(--heading);
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}

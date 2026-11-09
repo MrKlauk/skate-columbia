@@ -1,10 +1,26 @@
+import { useState, useEffect } from "react";
 import Hero from "../../components/hero/Hero";
 import Spot from "../../components/spot/Spot";
-import items from "../../data.json";
 import "./Spots.css";
 
+const API_URL = "https://skatecolumbia-backend-1.onrender.com/api/cards";
+
 const Spots = () => {
-    const spots = items.filter((item) => item.category === "spot");
+    const [spots, setSpots] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch(API_URL)
+            .then((res) => res.json())
+            .then((data) => {
+                setSpots(data.filter((item) => item.category === "spot"));
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.error(err);
+                setLoading(false);
+            });
+    }, []);
 
     return (
         <>
@@ -13,11 +29,15 @@ const Spots = () => {
                 subtitle="A curated list of the best spots in Columbia, SC."
             />
             <section className="page-cards">
-                <div className="card-grid">
-                    {spots.map((item) => (
-                        <Spot key={item._id} item={item} />
-                    ))}
-                </div>
+                {loading ? (
+                    <p className="loading">Loading spots...</p>
+                ) : (
+                    <div className="card-grid">
+                        {spots.map((item) => (
+                            <Spot key={item._id} item={item} />
+                        ))}
+                    </div>
+                )}
             </section>
         </>
     );

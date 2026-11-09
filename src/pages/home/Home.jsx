@@ -1,15 +1,28 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../../components/hero/Hero";
 import Carousel from "../../components/carousel/Carousel";
 import MapEmbed from "../../components/mapEmbed/MapEmbed";
-import items from "../../data.json";
 import { images } from "../../images";
 import "./Home.css";
 
+const API_URL = "https://skatecolumbia-backend-1.onrender.com/api/cards";
+
 const Home = () => {
-    const featured = items.filter((item) =>
-        ["owens-field2.jpg", "irmo-skate-park.jpg", "t-coop.jpg"].includes(item.img_name)
-    );
+    const [featured, setFeatured] = useState([]);
+
+    useEffect(() => {
+        fetch(API_URL)
+            .then((res) => res.json())
+            .then((data) => {
+                setFeatured(
+                    data.filter((item) =>
+                        ["owens-field2.jpg", "irmo-skate-park.jpg", "t-coop.jpg"].includes(item.img_name)
+                    )
+                );
+            })
+            .catch((err) => console.error(err));
+    }, []);
 
     return (
         <>
@@ -19,7 +32,7 @@ const Home = () => {
                 background={images["owens-field2.jpg"]}
             />
             <MapEmbed />
-            <Carousel slides={featured} />
+            {featured.length > 0 && <Carousel slides={featured} />}
             <section className="home-cards">
                 <Link
                     to="/spots"
