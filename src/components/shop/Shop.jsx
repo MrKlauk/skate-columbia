@@ -2,7 +2,7 @@ import { motion, useMotionValue, animate } from "motion/react";
 import "./Shop.css";
 import { images } from "../../images";
 
-const Shop = ({ item }) => {
+const Shop = ({ item, onClick }) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const rotate = useMotionValue(0);
@@ -20,6 +20,7 @@ const Shop = ({ item }) => {
             className="shop"
             onHoverStart={handleHoverStart}
             style={{ x, y, rotate, scale }}
+            onClick={onClick}
         >
             <img className="shop-img" src={images[item.img_name]} alt={item.title} />
             <div className="shop-body">

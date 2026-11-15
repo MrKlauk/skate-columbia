@@ -26,3 +26,22 @@
         grid-template-columns: 1fr;
     }
 }
+
+.add-btn {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--darker);
+    border: none;
+    font-size: 26px;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.add-btn:hover {
+    background: var(--white);
+}

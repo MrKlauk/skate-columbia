@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Hero from "../../components/hero/Hero";
 import Shop from "../../components/shop/Shop";
 import "./Shops.css";
+import axios from "axios";
+import { API_BASE_URL } from "../../config";
 
 const API_URL = "https://skatecolumbia-backend-1.onrender.com/api/cards";
 

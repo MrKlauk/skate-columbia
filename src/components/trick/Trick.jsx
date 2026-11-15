@@ -2,7 +2,7 @@ import { motion, useMotionValue, animate } from "motion/react";
 import "./Trick.css";
 import { images } from "../../images";
 
-const Trick = ({ item }) => {
+const Trick = ({ item, onClick }) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const rotate = useMotionValue(0);
@@ -20,6 +20,7 @@ const Trick = ({ item }) => {
             className="trick"
             onHoverStart={handleHoverStart}
             style={{ x, y, rotate, scale }}
+            onClick={onClick}
         >
             <img className="trick-img" src={images[item.img_name]} alt={item.title} />
             <div className="trick-body">
