@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
 import Hero from "../../components/hero/Hero";
 import Shop from "../../components/shop/Shop";
-import "./Shops.css";
-import axios from "axios";
+import ShopDialogue from "../../components/shop_dialogue/ShopDialogue";
 import { API_BASE_URL } from "../../config";
-
-const API_URL = "https://skatecolumbia-backend-1.onrender.com/api/cards";
+import "./Shops.css";
 
 const Shops = () => {
     const [shops, setShops] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [selected, setSelected] = useState(null);
 
     useEffect(() => {
-        fetch(API_URL)
+        fetch(`${API_BASE_URL}/api/cards`)
             .then((res) => res.json())
             .then((data) => {
                 setShops(data.filter((item) => item.category === "shop"));
@@ -36,11 +35,12 @@ const Shops = () => {
                 ) : (
                     <div className="card-grid">
                         {shops.map((item) => (
-                            <Shop key={item._id} item={item} />
+                            <Shop key={item._id} item={item} onClick={() => setSelected(item)} />
                         ))}
                     </div>
                 )}
             </section>
+            <ShopDialogue item={selected} onClose={() => setSelected(null)} />
         </>
     );
 };

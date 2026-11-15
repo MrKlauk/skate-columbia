@@ -2,7 +2,7 @@ import { motion, useMotionValue, animate } from "motion/react";
 import "./Spot.css";
 import { images } from "../../images";
 
-const Spot = ({ item }) => {
+const Spot = ({ item, onClick }) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const rotate = useMotionValue(0);
@@ -20,6 +20,7 @@ const Spot = ({ item }) => {
             className="spot"
             onHoverStart={handleHoverStart}
             style={{ x, y, rotate, scale }}
+            onClick={onClick}
         >
             <img className="spot-img" src={images[item.img_name]} alt={item.title} />
             <div className="spot-body">

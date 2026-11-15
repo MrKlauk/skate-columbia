@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import Hero from "../../components/hero/Hero";
 import Trick from "../../components/trick/Trick";
+import TrickDialogue from "../../components/trick_dialogue/TrickDialogue";
+import { API_BASE_URL } from "../../config";
 import "./Tricks.css";
-
-const API_URL = "https://skatecolumbia-backend-1.onrender.com/api/cards";
 
 const Tricks = () => {
     const [tricks, setTricks] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [selected, setSelected] = useState(null);
 
     useEffect(() => {
-        fetch(API_URL)
+        fetch(`${API_BASE_URL}/api/cards`)
             .then((res) => res.json())
             .then((data) => {
                 setTricks(data.filter((item) => item.category === "trick"));
@@ -34,11 +35,12 @@ const Tricks = () => {
                 ) : (
                     <div className="card-grid">
                         {tricks.map((item) => (
-                            <Trick key={item._id} item={item} />
+                            <Trick key={item._id} item={item} onClick={() => setSelected(item)} />
                         ))}
                     </div>
                 )}
             </section>
+            <TrickDialogue item={selected} onClose={() => setSelected(null)} />
         </>
     );
 };
